@@ -9,7 +9,7 @@ const Home = () => {
 
 	const me = {name : "mohammed", age : 23 , linkden : "https://www.linkedin.com/in/mohammed-el-hamra-b1513821b/"}
 	
-	const {data: blogs , isLoading ,error} = useFetch('http://localhost:8000/blogs')
+	const {data: blogs , isLoading ,error} =  useFetch('/blogs',"GET")
 
 	const handleClick = () =>{
 		setFreind('luigi')

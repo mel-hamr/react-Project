@@ -1,88 +1,146 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 * {
 	background-color: rgb(174, 170, 170);
 	margin: 0;
 	font-family: "Quicksand";
 	color: rgb(0, 0, 0);
-  }
-  .navbar {
+}
+.navbar {
 	padding: 20px;
 	display: flex;
 	align-items: center;
 	max-width: 600px;
 	margin: 0 auto;
 	border-bottom: 1px solid #000000;
-  }
-  .navbar h1 {
+}
+.navbar h1 {
 	color: #f1356d;
-  }
-  .navbar .links {
+}
+.navbar .links {
 	margin-left: auto;
-  }
-  .navbar a {
+}
+.navbar a {
 	margin-left: 16px;
 	text-decoration: none;
 	padding: 6px;
-  }
-  .navbar a:hover {
+}
+.navbar a:hover {
 	color: #f1356d;
-  }
-  .content {
+}
+.content {
 	max-width: 700px;
 	margin: 40px auto;
 	padding: 20px;
 	text-align: center;
-  }
-  .content p{
+}
+
+.content p {
 	margin-bottom: 20px;
-  }
-  .content  h1{
-	margin-bottom:50px;
-  }
-  .content button{
-		background-color: rgb(0, 0, 0);
-		color: #ffffff;
-		border: none;
-		border-radius:50px;
-		width: 60px;
-		height: 25px;
-		font-size: 15px;
-		margin-bottom: 20px;
-  }
-  .blog-preview {
-	padding: 10px 16px;
-	margin: 20px 0;
-	border-bottom: 1px solid #000000;
-  }
-  .blog-preview:hover {
-	box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
-  }
-  .blog-preview h2 {
-	font-size: 20px;
-	color: #f1356d;
-	margin-bottom: 8px;
-  }
-  .blog-preview a {
-	text-decoration:  none;
-  }
-  .blog-preview button {
+}
+
+.content h1 {
+	margin-bottom: 50px;
+}
+
+.content button {
 	background-color: rgb(0, 0, 0);
 	color: #ffffff;
 	border: none;
-	border-radius:50px;
+	border-radius: 50px;
+	width: 60px;
+	height: 25px;
+	font-size: 15px;
+	margin-bottom: 20px;
+}
+.blog-preview {
+	padding: 10px 16px;
+	margin: 20px 0;
+	border-bottom: 1px solid #000000;
+}
+.blog-preview:hover {
+	box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+.blog-preview h2 {
+	font-size: 20px;
+	color: #f1356d;
+	margin-bottom: 8px;
+}
+.blog-preview a {
+	text-decoration: none;
+}
+.blog-preview button {
+	background-color: rgb(0, 0, 0);
+	color: #ffffff;
+	border: none;
+	border-radius: 50px;
 	width: 100px;
 	height: 30px;
 	font-size: 15px;
 	margin-bottom: 20px;
-  }
+}
+.blog-details div p {
+	word-break: break-word;
+}
 
-  .blog-details h2 {
-		font-size: 40px;
-		color: #f1356d;
-		margin-bottom:  10px;
-  }
-  .blog-details div {
+.blog-details h2 {
+	font-size: 40px;
+	color: #f1356d;
+	margin-bottom: 10px;
+	word-break: break-word;
+}
+.blog-details div {
+	margin: 10px;
+}
+.create {
+	max-width: 400px;
+	margin: 0 auto;
+	text-align: center;
+}
+.create label {
+	text-align: left;
+	display: block;
+}
+.create h2 {
+	font-size: 30px;
+	color: #f1356d;
+	margin-bottom: 30px;
+}
+.create input,
+.create textarea,
+.create select {
+	width: 100%;
+	padding: 6px 10px;
+	margin: 25px 0;
+	border: 1px solid rgb(0, 0, 0);
+	box-sizing: border-box;
+	display: block;
+}
+.create button {
+	width: auto;
+	height: auto;
+	background: #000000;
+	color: #fff;
+	border: 0px;
+	padding: 8px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+.blog-details button {
+	width: auto;
+	height: auto;
+	background: #000000;
+	color: #fff;
+	border: 0px;
+	padding: 8px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+/* LOGIN CSS SHEET */
 
-	margin:  10px;
+.login  *{
+	/* height: 300px; */
+	background-color: #878585;
+	height: 250;
+	width: 400px;
 }

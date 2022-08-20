@@ -11,7 +11,6 @@ export class BlogController {
 
   @Post('create')
   async createBlog(@Body() body) {
-    console.log(body.author);
     const result = await this.BlogServ.insertBlog(
       body.title,
       body.body,
@@ -19,11 +18,19 @@ export class BlogController {
     );
     return result;
   }
-
+  @Post('delete')
+  async deleteBlog(@Body() body) {
+    const result = await this.BlogServ.deleteBlog(body.id);
+    return 'delete';
+  }
   @Get('/:id')
-  async getProduct(@Param('id') id) // @Post('getBlogById')
-  // async getBlogById(@Req() req)
+  async getProduct(
+    @Param('id') id, // @Post('getBlogById')
+  ) // async getBlogById(@Req() req)
   {
-    return await this.BlogServ.getBlogById(id)
+  
+      let blog = await this.BlogServ.getBlogById(id);
+      return blog;
+   
   }
 }

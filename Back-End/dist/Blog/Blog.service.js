@@ -25,27 +25,34 @@ let BlogService = class BlogService {
         var lastBlog = await this.BlogModel.find()
             .sort({ _id: -1 })
             .limit(1);
-        if (this.id === -1 && !lastBlog.length) {
+        if (!lastBlog.length) {
             this.id = 0;
         }
         else
             this.id = Number(lastBlog[0].id) + 1;
-        console.log(lastBlog);
-        console.log(this.id);
         const newBlog = new this.BlogModel({ _id: this.id, title, body, author });
         var blog = await newBlog.save().catch((e) => {
             console.log('error :', e);
             return 'faild';
         });
         this.id++;
-        return 'succes';
+        return blog;
     }
     async getAllBlog() {
         let blogs = await this.BlogModel.find();
         return blogs;
     }
+    async deleteBlog(id) {
+        return await this.BlogModel.deleteOne({ _id: id });
+    }
     async getBlogById(id) {
         let blog = await this.BlogModel.findOne().where({ _id: id.toString() });
+        if (blog === null) {
+            throw new common_1.HttpException({
+                status: common_1.HttpStatus.NOT_FOUND,
+                error: 'Out of index',
+            }, common_1.HttpStatus.NOT_FOUND);
+        }
         return blog;
     }
 };

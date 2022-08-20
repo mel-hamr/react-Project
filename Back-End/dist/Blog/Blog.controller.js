@@ -23,12 +23,16 @@ let BlogController = class BlogController {
         return this.BlogServ.getAllBlog();
     }
     async createBlog(body) {
-        console.log(body.author);
         const result = await this.BlogServ.insertBlog(body.title, body.body, body.author);
         return result;
     }
+    async deleteBlog(body) {
+        const result = await this.BlogServ.deleteBlog(body.id);
+        return 'delete';
+    }
     async getProduct(id) {
-        return await this.BlogServ.getBlogById(id);
+        let blog = await this.BlogServ.getBlogById(id);
+        return blog;
     }
 };
 __decorate([
@@ -44,6 +48,13 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], BlogController.prototype, "createBlog", null);
+__decorate([
+    (0, common_1.Post)('delete'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], BlogController.prototype, "deleteBlog", null);
 __decorate([
     (0, common_1.Get)('/:id'),
     __param(0, (0, common_1.Param)('id')),

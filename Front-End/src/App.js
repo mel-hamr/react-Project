@@ -5,6 +5,7 @@ import Create from './Create';
 import BlogDetails from './BlogDetails';
 import NotFound from './notFound.js'
 import Login from './Login';
+import Signp from './Signup';
 function App() {
 	return (
 		<Router>
@@ -23,6 +24,9 @@ function App() {
 						</Route>
 						<Route path="/login">
 							<Login/>
+						</Route>
+						<Route path="/signup">
+							<Signp></Signp>
 						</Route>
 						<Route path="*">
 							<NotFound/>

@@ -1,6 +1,14 @@
 import { useState } from "react";
-import{MdOutlineAlternateEmail} from "react-icons/md"
-import {RiLockPasswordFill} from "react-icons/ri"
+import { MdOutlineAlternateEmail } from "react-icons/md"
+import { RiLockPasswordFill } from "react-icons/ri"
+import SignupStyles from "./styleModules/Signup.module.css"
+import { BsEnvelope } from "react-icons/bs"
+import { AiOutlineUser } from "react-icons/ai"
+import { IconContext } from "react-icons";
+import { FiLock } from "react-icons/fi"
+import { RiLockPasswordLine } from "react-icons/ri"
+
+
 const Signp = () => {
 	const [userName, setUserName] = useState("");
 	const [password, setPassword] = useState("");
@@ -8,10 +16,12 @@ const Signp = () => {
 	const [confirmedPassword, setConfirmedPswrd] = useState("");
 	return (
 		
-		<div className="signup">
+		<div className={SignupStyles.signup}>
 			<h2>Signup</h2>
 			<form>
-				<label><i><MdOutlineAlternateEmail/></i>Email</label>
+			<IconContext.Provider value={{className: SignupStyles.icons}}>
+				<BsEnvelope/>
+			</IconContext.Provider>
 				<input
 					type="text"
 					required
@@ -20,7 +30,9 @@ const Signp = () => {
 						setEmail(e.target.value);
 					}}
 				/>
-                <label>UserName</label>
+               	<IconContext.Provider value={{ className: SignupStyles.icons }}>
+					<AiOutlineUser />
+				</IconContext.Provider>
 				<input
 					type="text"
 					required
@@ -29,7 +41,9 @@ const Signp = () => {
 						setUserName(e.target.value);
 					}}
 				/>
-				<label><i><RiLockPasswordFill/></i>password</label>
+				<IconContext.Provider value={{ className: SignupStyles.icons }}>
+					<FiLock/>
+				</IconContext.Provider>
 				<input
 					type="text"
 					required
@@ -38,7 +52,9 @@ const Signp = () => {
 						setPassword(e.target.value);
 					}}
 				/>
-				<label>Confirmed password</label>
+				<IconContext.Provider value={{ className: SignupStyles.icons }}>
+					<RiLockPasswordLine/>
+				</IconContext.Provider>
 				<input
 					type="text"
 					value={confirmedPassword}

@@ -1,39 +1,48 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {GoPerson} from "react-icons/go"
-
+import {FaUserAlt , FaLock} from "react-icons/fa"
+import {AiOutlineUser} from "react-icons/ai"
+import { IconContext } from "react-icons";
+import { FiLock } from "react-icons/fi"
+import LoginStyles from "./styleModules/Login.module.css"
 const Login = () => {
 	const [userName, setUserName] = useState("");
 	const [password, setPassword] = useState("");
 
 	return (
-		<div className="login">
-			<h2>Login</h2>
+		<div className={LoginStyles.login}>
+			<h1>Login</h1>
 			<form>
-				<div className="text_input">
-					<i><GoPerson/></i>
+				<div className={LoginStyles.text_input}>
+				<IconContext.Provider value={{ className: LoginStyles.icons }}>
+					<AiOutlineUser />
+				</IconContext.Provider>
 					<input
+					placeholder="User name"
 						type="text"
 						required
 						value={userName}
 						onChange={(e) => {
 							setUserName(e.target.value);
 						}}
-					/>
+						/>
 				</div>
-				<div className="text_input">
-					<label>password</label>
+				<div className={LoginStyles.text_input}>
+				<IconContext.Provider value={{ className: LoginStyles.icons }}>
+					<FiLock/>
+				</IconContext.Provider>
 					<input
+					placeholder="Password"
 						type="password"
 						value={password}
 						onChange={(e) => setPassword(e.target.value)}
 						required
-					/>
+						/>
 				</div>
 				{/* <label className="pass"> Forgot password ?</label> */}
 
 				{<button>Login</button>}
-				<div className="signup_link">
+				<div className={LoginStyles.signup_link}>
 					<p>You are new here</p>
 					<Link to="/signup">
 						 <label> signup </label>

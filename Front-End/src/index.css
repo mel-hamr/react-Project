@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-@import"https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 :root {
-	--backgournd: #ffffff;
-	--backgournd_seconde: #7c7c7c;
+	--backgournd: #dbfffd;
+	--backgournd_seconde: #a8e3e1;
 	--Text: #000000;
 	--h1: #000000;
 }
@@ -153,134 +153,9 @@
 	cursor: pointer;
 }
 
-/*---------------------- LOGIN CSS SHEET--------------- */
 
-.login {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 400px;
-	height: 400px;
-	background-color: var(--backgournd_seconde);
-	border-radius: 10px;
-	box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
-}
-.login h2 {
-	background-color: inherit;
-	color: var(--h1);
-	margin: 20px 0;
-	height: 10%;
-	border-bottom: 1px solid var(--backgournd_seconde);
-}
-.login form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background-color: inherit;
-	justify-content: space-evenly;
-	height: 70%;
-}
-.signup_link,
-p,
-label {
-	background-color: transparent;
-	font-size: medium;
-	font-weight: bold;
-}
-.login input {
-	width: 300px;
-	margin: 0.5em 1em;
-	border: 10px solid var(--backgournd);
-	border-radius: 10px;
-	font-size: medium;
-}
-.signup_link a {
-	background-color: var(--backgournd_seconde);
-}
-.signup_link {
-	display: flex;
-}
-.signup_link label {
-	background-color: var(--backgournd_seconde);
-}
-.login label {
-	padding: 5px;
-}
-.login button {
-	margin: 10px;
-	background-color: var(--h1);
-	color: var(--backgournd_seconde);
-	font-size: larger;
-	font-weight: bold;
-	width: 80%;
-	height: 40px;
-	/* border-radius: 0px; */
-}
 /* ///////////////////////////////////////////////// */
 
 /*---------------------- SIGNUP CSS SHEET--------------- */
 
-.signup {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 400px;
-	height: 500px;
-	/* background-color: var(--backgournd_seconde); */
-	border-radius: 20px;
-	border:	5px solid #000000;
-	box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
-}
 
-.signup form {
-	background-color: inherit;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	/* background-color: #000000; */
-	height: 80%;
-}
-.signup h2 {
-	margin: 20px 1px 20px 10px;
-	/* height: 10%; */
-	background-color: inherit;
-	color: var(--h1);
-	border-bottom: 4px solid var(--Text);
-	width: 80px;
-	text-align: left;
-}
-.signup input {
-	width: 90%;
-	margin: 1px 1px 1px 10px;
-	/* border-bottom: 2px solid var(--backgournd_seconde); */
-	border: none;
-	border-bottom: 3px solid #7c7c7c;
-	font-size: medium;
-	font-weight: bold;
-	outline: none;
-	padding-top: 10px;
-	text-align: left;
-	transition: none ;
-	display: block;
-	
-}
-.signup label {
-	padding: 10px;
-	color: var(--Text);
-}
-.signup button {
-	margin: 25px 1px 15px 10px;
-	background-color: var(--h1);
-	color: var(--backgournd_seconde);
-	font-size: larger;
-	font-weight: bold;
-	width: 95%;
-	height: 40px;
-}
-.signup i {
-	margin: 5px;
-	align-items: center;
-	padding-bottom: 50px;
-}

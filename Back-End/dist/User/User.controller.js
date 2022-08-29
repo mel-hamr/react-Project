@@ -22,6 +22,7 @@ let UserController = class UserController {
     async getAllBlogs() {
     }
     async createBlog(body) {
+        this.userServ.createUser(body);
     }
     async deleteBlog(body) {
     }

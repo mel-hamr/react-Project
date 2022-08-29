@@ -10,6 +10,7 @@ export class UserController {
 
   @Post('create')
   async createBlog(@Body() body) {
+    this.userServ.createUser(body);
     
   }
   @Post('delete')

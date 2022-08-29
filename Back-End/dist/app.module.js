@@ -12,12 +12,13 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const Blog_module_1 = require("./Blog/Blog.module");
 const mongoose_1 = require("@nestjs/mongoose");
+const User_module_1 = require("./User/User.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            Blog_module_1.BlogModule,
+            Blog_module_1.BlogModule, User_module_1.UserModule,
             mongoose_1.MongooseModule.forRoot('mongodb+srv://Reinhard:mongomongo@cluster0.bncb5ww.mongodb.net/blogData?retryWrites=true&w=majority'),
         ],
         controllers: [app_controller_1.AppController],

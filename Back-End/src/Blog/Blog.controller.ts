@@ -24,11 +24,8 @@ export class BlogController {
     return 'delete';
   }
   @Get('/:id')
-  async getProduct(
-    @Param('id') id, // @Post('getBlogById')
-  ) // async getBlogById(@Req() req)
+  async getProduct(@Param('id') id)
   {
-  
       let blog = await this.BlogServ.getBlogById(id);
       return blog;
    

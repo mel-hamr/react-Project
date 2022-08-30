@@ -24,10 +24,10 @@ const Signp = () => {
 	const displayError = (errorMsg) =>{
 		setError(errorMsg);
 		setIsError(true);
-		setTimeout(() => {
-			setIsError(false);
-			setError("");
-		}, 2000);
+		// setTimeout(() => {
+		// 	setIsError(false);
+		// 	setError("");
+		// }, 2000);
 	}
 
 	const handleSignup = (e) => {
@@ -39,22 +39,26 @@ const Signp = () => {
 			let data = {userName : userName , email : email , password :password}
 			try {
 				axios({
-					url: "/User/create",
+					url: "/user/create",
 					method: "POST",
 					data: data,
 				})
 					.then((res) => {
-						console.log("user Create succesfully");
-						history.push("/Home");
+
+						// console.log("user Create succesfully " , res.status , " " ,res.statusText);
+						if(res.status === 201)
+							history.push("/");
 					})
 					.catch((err) => {
-						displayError(err.message)
+						console.log("==> ",err);
+						displayError(err.response.data.message)
 					})
 					.finally(() => {
 
 					});
 			} catch {}
 		}
+
 		// let data = {userName : userName , password : }
 	};
 

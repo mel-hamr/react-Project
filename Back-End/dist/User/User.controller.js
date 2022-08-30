@@ -15,18 +15,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserController = void 0;
 const common_1 = require("@nestjs/common");
 const User_service_1 = require("./User.service");
+const bcrypt = require("bcrypt");
 let UserController = class UserController {
     constructor(userServ) {
         this.userServ = userServ;
     }
-    async getAllBlogs() {
-    }
+    async getAllBlogs() { }
     async createBlog(body) {
-        this.userServ.createUser(body);
+        let user = await this.userServ.createUser(body);
+        return user;
     }
-    async deleteBlog(body) {
-    }
-    async getProduct(id) {
+    async deleteBlog(body) { }
+    async getProduct(id) { }
+    async handleLogin(body) {
+        let user = await this.userServ.getUserBy({ userName: body.userName });
+        if (!user)
+            throw new common_1.BadRequestException();
+        if (!await bcrypt.compare(body.password, user.password))
+            throw new common_1.BadRequestException();
+        console.log(user);
+        return user;
     }
 };
 __decorate([
@@ -56,8 +64,15 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "getProduct", null);
+__decorate([
+    (0, common_1.Post)('login'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "handleLogin", null);
 UserController = __decorate([
-    (0, common_1.Controller)('User'),
+    (0, common_1.Controller)('user'),
     __metadata("design:paramtypes", [User_service_1.UserService])
 ], UserController);
 exports.UserController = UserController;

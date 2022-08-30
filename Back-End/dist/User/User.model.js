@@ -6,6 +6,6 @@ exports.UserSchema = new mongoose_1.default.Schema({
     userName: { type: String, require: true, unique: true, dropDups: true },
     email: { type: String, required: true, unique: true, dropDups: true },
     password: { type: String, required: true },
-    accesToken: { type: String, required: true },
+    accesToken: { type: String, required: false },
 });
 //# sourceMappingURL=User.model.js.map

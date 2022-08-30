@@ -16,16 +16,31 @@ exports.UserService = void 0;
 const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
+const bcrypt = require("bcrypt");
 let UserService = class UserService {
     constructor(userModel) {
         this.userModel = userModel;
     }
     async createUser(data) {
         let checker;
-        checker = await this.userModel.findOne({ email: data.email });
-        console.log(data);
-        console.log("===========");
-        console.log("checker ==>\n", checker);
+        checker = await this.userModel.findOne({
+            $or: [{ email: data.email }, { userName: data.userName }],
+        });
+        if (checker !== null)
+            throw new common_1.HttpException('UserName or Email already exists', common_1.HttpStatus.BAD_REQUEST);
+        else {
+            let hashPass = await bcrypt.hash(data.password, 12);
+            let newUser = new this.userModel({
+                userName: data.userName,
+                email: data.email,
+                password: hashPass,
+            });
+            await newUser.save();
+        }
+    }
+    async getUserBy(condition) {
+        console.log(condition);
+        return await this.userModel.findOne(condition);
     }
 };
 UserService = __decorate([

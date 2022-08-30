@@ -38,14 +38,14 @@ export class BlogService {
 
   async getBlogById(id :number)
   {
-	let blog : any = await this.BlogModel.findOne().where({_id : id.toString()})
-  if(blog === null)
-  {
-    throw new HttpException({
-      status: HttpStatus.NOT_FOUND,
-      error: 'Out of index',
-    }, HttpStatus.NOT_FOUND);
-  }
-	return blog;
+    let blog : any = await this.BlogModel.findOne().where({_id : id.toString()})
+    if(blog === null)
+    {
+      throw new HttpException({
+        status: HttpStatus.NOT_FOUND,
+        error: 'Out of index',
+      }, HttpStatus.NOT_FOUND);
+    }
+    return blog;
   }
 }
